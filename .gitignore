@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*.tmp
+media/crisp/gif001-original.gif
+media/crisp/gif002-formation-enemy.gif
+media/crisp/gif003-impact-enemy.gif
+media/crisp/gif004-stage-boss.gif
+media/crisp/gif005-reward.gif
+media/crisp/gif006-player.gif
+media/crisp/*.optimized.gif
+media/crisp/*-web.gif
