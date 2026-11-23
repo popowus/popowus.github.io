@@ -283,6 +283,11 @@ h1 em { color: #111; }
 .backup-export, .backup-import { min-height: 34px; display: inline-flex; align-items: center; padding: 7px 11px; border: 1px solid #222; border-radius: 0; color: #222; background: #fff; font: 10px "DM Mono", monospace; cursor: pointer; }
 .backup-export:hover, .backup-import:hover { color: #fff; background: #222; }
 .backup-import input { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+.published-view .edit-toolbar,
+.published-view .backup-dock,
+.published-view .upload-button,
+.published-view .media-remove { display: none !important; }
+.published-view [contenteditable] { outline: 0; }
 .case-split { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 60px; }
 .credit-note { align-self: start; padding: 24px; border-left: 4px solid #497b91; background: #f5f5f5; }.credit-note span { color: #497b91; font: 10px "DM Mono", monospace; }.credit-note p { margin: 14px 0 0; font-size: 13px; line-height: 1.8; }
 .number-flow { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid #222; }.number-flow section { min-width: 0; padding: 23px 20px; }.number-flow section + section { border-left: 1px solid #222; }.number-flow b { color: #497b91; font: 24px "DM Mono", monospace; }.number-flow h3 { margin: 30px 0 12px; font-size: 17px; }.number-flow p { margin: 0; font-size: 13px; line-height: 1.75; }

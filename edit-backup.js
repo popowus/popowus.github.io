@@ -1,4 +1,19 @@
 (() => {
+  const localHosts = new Set(['localhost', '127.0.0.1']);
+  const isLocalEditing = location.protocol === 'file:' || localHosts.has(location.hostname);
+
+  if (!isLocalEditing) {
+    document.documentElement.classList.add('published-view');
+    document.querySelectorAll('[contenteditable="true"]').forEach((node) => {
+      node.setAttribute('contenteditable', 'false');
+    });
+    document.querySelectorAll('.media-slot').forEach((slot) => {
+      if (!slot.querySelector('.media-item')) slot.hidden = true;
+    });
+    return;
+  }
+
+  document.documentElement.classList.add('local-edit-view');
   const prefix = document.body.dataset.backupPrefix;
   const pageName = document.body.dataset.backupName || document.title || '作品集页面';
   if (!prefix) return;
