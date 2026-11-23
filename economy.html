@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="奖励、难度与资源循环配置案例。" />
+    <title>奖励与数值配置 - 李燕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="detail-page case-study-page economy-page" data-case-page="economy" data-backup-prefix="liyan-portfolio-economy-v1-" data-backup-name="奖励与数值配置案例">
+    <header class="site-header">
+      <a class="brand" href="./index.html"><span class="brand-mark">LY</span><span class="brand-text">Li Yan / 李燕</span></a>
+      <nav class="main-nav" aria-label="主导航"><a class="nav-link active" href="./index.html#work">工作项目</a><a class="nav-link" href="./index.html#personal">个人项目</a><a class="nav-link" href="./index.html#videos">视频作品</a><a class="nav-link" href="./gallery.html">绘画杂图</a></nav>
+    </header>
+
+    <main id="top" class="detail-shell">
+      <a class="back-link" href="./index.html#work">← 返回工作项目</a>
+      <section class="detail-hero case-study-hero">
+        <div>
+          <p class="eyebrow">WORK CASE / ECONOMY &amp; CONFIG</p>
+          <h1 contenteditable="true" data-case-editable="title">奖励与数值配置：<br /><em>从关卡产出到资源循环</em></h1>
+          <p class="detail-lede" contenteditable="true" data-case-editable="lede">以关卡难度和奖励为起点，逐步梳理体力、金币、道具与活动代币的产出和消耗，并通过首日进度模拟检查配置是否符合预期。</p>
+          <div class="detail-meta"><span contenteditable="true" data-case-editable="meta-1">职责：奖励配置 / 资源定价 / 进度模拟 / 数据维护</span><span contenteditable="true" data-case-editable="meta-2">工具：Excel / Luban / AI 辅助脚本</span><span contenteditable="true" data-case-editable="meta-3">说明：案例已脱敏，不展示真实公式、系数与商业数据</span></div>
+          <div class="detail-tags"><span>ECONOMY</span><span>REWARD CURVE</span><span>CONFIGURATION</span></div>
+        </div>
+        <div class="economy-cover" aria-label="资源循环示意">
+          <span>RESOURCE LOOP / OVERVIEW</span>
+          <div class="economy-orbit"><b>关卡</b><i>奖励</i><i>消耗</i><i>成长</i><i>活动</i></div>
+          <p>难度 → 产出 → 消耗 → 进度验证</p>
+        </div>
+      </section>
+
+      <section class="edit-toolbar"><span class="edit-status"><i></i> 文字自动保存在当前浏览器；Ctrl+S 不包含页面内修改</span><span class="edit-hint">编辑结束后请下载备份；表格截图需先脱敏</span></section>
+
+      <section class="detail-grid case-detail-grid">
+        <article class="editable-block full-width">
+          <p class="block-label">01 / CONTEXT</p>
+          <h2 contenteditable="true" data-case-editable="context-title">我如何开始这项工作</h2>
+          <div class="case-split">
+            <div class="prose" contenteditable="true" data-case-editable="context-text"><p>这是我第一次系统接触游戏数值配置。最初我面对的是一组彼此关联的问题：每关应该给多少奖励、道具如何定价、体力多久恢复、广告奖励给多少，以及玩家第一天大约能推进到什么位置等等问题。</p><p>在同事（感谢程序小哥）的建议下，我先从主线关卡的难度与资源产出入手，再向消耗、定价和支线代币扩展。这个顺序帮我建立了基本框架；之后我负责把思路落实到配置表中，并根据模拟结果继续检查和调整。</p></div>
+            <aside class="credit-note"><span>协作说明</span><p contenteditable="true" data-case-editable="credit-text">动态波动的计算方式与模拟脚本由 AI 辅助整理。我负责理解方法、准备输入条件、完成配置、核对输出并将结果落到项目数据中。</p></aside>
+          </div>
+        </article>
+
+        <article class="editable-block full-width">
+          <p class="block-label">02 / CONFIG ORDER</p>
+          <h2 contenteditable="true" data-case-editable="order-title">先确定主线，再补齐资源循环</h2>
+          <div class="number-flow">
+            <section><b>01</b><h3 contenteditable="true" data-case-editable="order-1-title">核心玩法基础</h3><p contenteditable="true" data-case-editable="order-1-text">先把最底层的基础玩法循环，消耗返还资源定死，（如体力的固定消耗、返还、自然恢复等）然后再考虑奖励配置。</p></section>
+            <section><b>02</b><h3 contenteditable="true" data-case-editable="order-2-title">关卡难度与奖励</h3><p contenteditable="true" data-case-editable="order-2-text">确定整体难度随进度上升的方向，以及周期性关卡内需要出现的起伏。再根据难度标尺配置奖励，难度越高、付出越多、收益越高。</p></section>
+            <section><b>03</b><h3 contenteditable="true" data-case-editable="order-3-title">消耗与定价</h3><p contenteditable="true" data-case-editable="order-3-text">考虑体力、道具价格、广告兑换上限和溢出规则。尽可能的保证产出不嫌少，消耗不嫌多。</p></section>
+            <section><b>04</b><h3 contenteditable="true" data-case-editable="order-4-title">支线资源</h3><p contenteditable="true" data-case-editable="order-4-text">在主循环基本成立后，补充抽奖活动代币等支线资源的获得方式与用途。</p></section>
+            <section><b>05</b><h3 contenteditable="true" data-case-editable="order-5-title">进度模拟验证</h3><p contenteditable="true" data-case-editable="order-5-text">模拟新玩家首日可获得和消耗的资源，检查最佳推进区间是否符合预期。</p></section>
+          </div>
+        </article>
+
+        <article class="editable-block full-width">
+          <p class="block-label">03 / DIFFICULTY &amp; REWARD</p>
+          <h2 contenteditable="true" data-case-editable="curve-title">让长期增长与短周期起伏同时存在</h2>
+          <div class="curve-layout">
+            <div class="curve-visual" aria-label="脱敏难度曲线示意"><span>DIFFICULTY</span><svg viewBox="0 0 600 220" role="img" aria-label="逐步上升并周期波动的示意曲线"><path class="curve-axis" d="M35 20V190H575"/><path class="curve-line" d="M35 165 C70 150,90 175,125 145 S175 120,205 140 S250 90,285 115 S330 70,365 95 S410 50,445 75 S500 25,560 45"/><g><circle cx="125" cy="145" r="5"/><circle cx="285" cy="115" r="5"/><circle cx="445" cy="75" r="5"/></g></svg><small>示意图：只表达结构，不对应项目真实数值</small></div>
+            <div class="prose" contenteditable="true" data-case-editable="curve-text"><p>难度不是简单地线性增加。我使用“长期递增趋势 + 短周期波动”的结构：长期趋势保证后续关卡整体在一点点变难，短周期则让若干关组成一组，在组内安排相对轻松、上升和阶段高点。</p><p>奖励与这个节奏对应，但不会把公式、周期系数和实际奖励量直接放在作品集中。对外展示重点是：我知道难度、奖励和玩家资源储备需要一起考虑，而不是分别填表。</p></div>
+          </div>
+          <div class="media-slot" data-slot="curve"><div class="media-slot-head"><span>可放脱敏后的难度/奖励曲线截图</span><label class="upload-button">追加图片<input class="slot-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple /></label></div><div class="media-wall"><p class="media-empty">建议只保留趋势，隐藏公式、真实奖励量和内部字段</p></div></div>
+        </article>
+
+        <article class="editable-block">
+          <p class="block-label">04 / REWARD LAYERS</p>
+          <h2 contenteditable="true" data-case-editable="reward-title">同一关卡中的奖励层级</h2>
+          <ul class="parameter-list" contenteditable="true" data-case-editable="reward-list"><li><b>基础通关</b><span>保证玩家完成关卡后获得基础反馈</span></li><li><b>星级差异</b><span>用一至三星表现区分奖励档位</span></li><li><b>首次三星</b><span>提供一次性目标和重玩动力</span></li><li><b>关键节点</b><span>在特定关卡增加阶段性额外奖励</span></li></ul>
+        </article>
+
+        <article class="editable-block">
+          <p class="block-label">05 / RESOURCE LOOP</p>
+          <h2 contenteditable="true" data-case-editable="loop-title">从产出到消耗的检查</h2>
+          <div class="resource-map"><span>关卡奖励</span><i>→</i><span>金币 / 道具</span><i>→</i><span>闯关消耗</span><i>→</i><span>进度推进</span><b>广告补充</b><b>体力恢复</b><b>活动代币</b></div>
+          <p class="case-footnote" contenteditable="true" data-case-editable="loop-note">我会分别检查稳定产出、一次性产出和额外补充渠道，并确认每种资源都有明确用途，避免只有产出没有消耗，或消耗压力过早阻断主线进度。</p>
+        </article>
+
+        <article class="editable-block">
+          <p class="block-label">07 / TOOLS &amp; VALIDATION</p>
+          <h2 contenteditable="true" data-case-editable="tools-title">AI工具</h2>
+          <div class="prose" contenteditable="true" data-case-editable="tools-text"><p>AI用于辅助整理计算方法、生成模拟脚本和检查配置异常；Excel与Luban用于维护实际配置。我需要先明确变量和假设，再判断脚本输出是否合理，最后把确认后的结果同步到配置表与后台。</p><p>脚本能提高计算和排查效率，但奖励是否符合玩法目标、结果是否能落地，仍需要结合关卡体验和项目约束判断。</p></div>
+        </article>
+
+        <article class="editable-block">
+          <p class="block-label">08 / REFLECTION</p>
+          <h2 contenteditable="true" data-case-editable="reflection-title">我从这项工作中建立的方法</h2>
+          <div class="prose" contenteditable="true" data-case-editable="reflection-text"><p>我学到的重点是先确定玩法基础消耗资源，再按主线产出、核心消耗、支线资源和进度验证的顺序建立关系。</p><p>真正需要检查的还有玩家在不同阶段是否有明确目标、资源是否有用途，以及消耗压力是否与体验节奏匹配。</p></div>
+        </article>
+      </section>
+    </main>
+    <footer class="site-footer"><span>LI YAN / PERSONAL ARCHIVE</span><span>© 2026 Li Yan</span><a class="back-to-top" href="#top"><span>↑</span> 回到顶部</a></footer>
+    <script src="./case-editor.js"></script>
+    <script src="./edit-backup.js"></script>
+  </body>
+</html>

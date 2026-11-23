@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="游戏关卡设计与迭代案例：地图结构、路线规划与动态追逐机制。" />
+    <title>关卡设计与迭代 - 李燕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="detail-page level-case-page" data-backup-prefix="liyan-portfolio-levels-v1-" data-backup-name="关卡设计案例">
+    <header class="site-header">
+      <a class="brand" href="./index.html"><span class="brand-mark">LY</span><span class="brand-text">Li Yan / 李燕</span></a>
+      <nav class="main-nav" aria-label="主导航"><a class="nav-link active" href="./index.html#work">工作项目</a><a class="nav-link" href="./index.html#personal">个人项目</a><a class="nav-link" href="./index.html#videos">视频作品</a><a class="nav-link" href="./gallery.html">绘画杂图</a></nav>
+      <div class="header-meta">CASE / LEVEL DESIGN</div>
+    </header>
+
+    <main class="detail-shell">
+      <a class="back-link" href="./index.html#work">← 返回工作项目</a>
+
+      <section class="detail-hero level-detail-hero">
+        <div>
+          <p class="eyebrow">WORK CASE / LEVEL DESIGN</p>
+          <h1 contenteditable="true" data-editable="level-title">关卡系统重构：<br /><em>从盲目探索到可预判的路线设计</em></h1>
+          <p class="detail-lede" contenteditable="true" data-editable="level-lede">围绕地图可读性、路线规划重新设计关卡结构；并新增了地图概览模式、异形地图的设计与敌人追逐机制。</p>
+          <div class="detail-meta">
+            <span contenteditable="true" data-editable="level-meta-1">职责：关卡设计 / 规则梳理 / 配置与实机验证</span>
+            <span contenteditable="true" data-editable="level-meta-2">重构后产出 58 个新版关卡</span>
+            <span contenteditable="true" data-editable="level-meta-3">项目状态：微信与抖音小游戏已上线（案例已脱敏）</span>
+          </div>
+          <div class="detail-tags"><span>LEVEL DESIGN</span><span>ROUTE PLANNING</span><span>ITERATION</span></div>
+        </div>
+        <div class="level-cover" aria-label="9乘13关卡网格示意">
+          <span class="level-cover-label">9 × 13 / REBUILT GRID</span>
+          <div class="level-cover-grid" aria-hidden="true"></div>
+          <p>地图结构 · 路线选择 · 动态压力</p>
+        </div>
+      </section>
+
+      <section class="edit-toolbar" aria-label="编辑工具">
+        <span class="edit-status"><i></i> 文字自动保存在当前浏览器；Ctrl+S 不包含页面内修改</span>
+        <span class="edit-hint">编辑结束后请下载备份；正式图片仍需嵌入网站</span>
+      </section>
+
+      <section class="detail-grid level-detail-grid">
+        <article class="editable-block full-width">
+          <p class="block-label">01 / CASE OVERVIEW</p>
+          <h2 contenteditable="true" data-editable="level-heading-overview">概述</h2>
+          <div class="prose level-prose-narrow" contenteditable="true" data-editable="level-text-overview">
+            <p>我负责本项目的关卡设计、关卡配置与实机检查。早期关卡主要在固定矩形地图尺寸上等比扩展面积，但更大的地图并没有带来更有趣的选择：介于手机显示范围，玩家在大地图的画面中只能看到局部区域，难以判断下一步会到达哪里，关卡容易变成连续盲试。</p>
+            <p>重构时，我将重点从“唯一解法”转向“让玩家能够观察、预判并规划路线”。新版关卡尝试围绕清晰的地图结构、可辨认的图案、障碍物特性和动态追逐压力展开。</p>
+          </div>
+          <div class="media-slot" data-slot="overview">
+            <div class="media-slot-head"><span>旧版与新版地图对比</span><label class="upload-button">追加 GIF / 图片<input class="slot-input" type="file" accept="image/gif,image/png,image/jpeg,image/webp" multiple /></label></div>
+            <div class="media-wall"><p class="media-empty">可在这里放旧版与新版关卡对比图</p></div>
+          </div>
+        </article>
+
+        <article class="editable-block full-width">
+          <p class="block-label">02 / ORIGINAL CONSTRAINTS</p>
+          <h2 contenteditable="true" data-editable="level-heading-constraints">初版关卡的限制</h2>
+          <div class="constraint-grid">
+            <section><b>01</b><h3 contenteditable="true" data-editable="level-constraint-title-1">中心与对称难以统一</h3><p contenteditable="true" data-editable="level-constraint-1">早期以 8×12 格为基础。偶数网格没有唯一中心格，在需要围绕中心布置障碍、生成对称结构时，策划表达与程序处理都不够直观。</p></section>
+            <section><b>02</b><h3 contenteditable="true" data-editable="level-constraint-title-2">尺寸扩大不等于选择增加</h3><p contenteditable="true" data-editable="level-constraint-2">旧版地图仅支持 8×12、16×12、16×24、8×24 四种矩形规格。大地图主要是基础地图的等比扩展，面积增加了，但路线和决策未必更丰富。</p></section>
+            <section><b>03</b><h3 contenteditable="true" data-editable="level-constraint-title-3">局部视野造成盲目探索和死循环</h3><p contenteditable="true" data-editable="level-constraint-3">玩家无法一次看清整张地图。旧版地图缺少可辨认的结构规律时，玩家很难预测滑行后的落点与后续路径，每一步更接近盲猜。某些关卡当玩家步数未耗尽，贴边移动时，会陷入死循环。</p></section>
+          </div>
+          <div class="media-slot" data-slot="constraints">
+            <div class="media-slot-head"><span>网格、地图规格与视野问题</span><label class="upload-button">追加 GIF / 图片<input class="slot-input" type="file" accept="image/gif,image/png,image/jpeg,image/webp" multiple /></label></div>
+            <div class="media-wall"><figure class="media-item"><img src="./media/levels/constraint-edge-loop.gif" alt="角色贴近关卡边界后陷入重复移动" loading="lazy" /><figcaption>旧版关卡问题：角色贴边移动后可能陷入重复路径</figcaption></figure></div>
+          </div>
+        </article>
+
+        <article class="editable-block full-width">
+          <p class="block-label">03 / REBUILD</p>
+          <h2 contenteditable="true" data-editable="level-heading-rebuild">重构后的设计选择</h2>
+          <div class="design-principles">
+            <section><span>GRID</span><h3 contenteditable="true" data-editable="level-rebuild-title-1">9×13 网格</h3><p contenteditable="true" data-editable="level-rebuild-1">奇数网格提供唯一中心格和清晰的横纵中轴，更便于围绕中心进行对称布局，也方便策划与程序统一坐标和生成规则。</p></section>
+            <section><span>READABILITY</span><h3 contenteditable="true" data-editable="level-rebuild-title-2">可识别的地图结构</h3><p contenteditable="true" data-editable="level-rebuild-2">用几何图案、对称关系和重复结构组织地图，部分关卡的设计过程参考了拼豆的图纸，让玩家能从局部画面识别位置，并对后续路线形成预期。</p></section>
+            <section><span>OVERVIEW</span><h3 contenteditable="true" data-editable="level-rebuild-title-3">地图概览与漫游</h3><p contenteditable="true" data-editable="level-rebuild-3">进入关卡前可查看地图概览，关卡内可使用地图漫游查看全图，帮助玩家在行动前确认小羊、钥匙、障碍物与路线关系。</p></section>
+            <section><span>SHAPE</span><h3 contenteditable="true" data-editable="level-rebuild-title-4">异形地图支持</h3><p contenteditable="true" data-editable="level-rebuild-4">新版不再局限于四种矩形尺寸，可以通过异形边界提高关卡布局和玩法上限。</p></section>
+          </div>
+          <div class="media-slot" data-slot="rebuild">
+            <div class="media-slot-head"><span>新版地图、异形边界与地图漫游</span><label class="upload-button">追加 GIF / 图片<input class="slot-input" type="file" accept="image/gif,image/png,image/jpeg,image/webp" multiple /></label></div>
+            <div class="media-wall"><figure class="media-item"><img src="./media/levels/map-preview.gif" alt="进入关卡前预览整张关卡地图" loading="lazy" /><figcaption>地图概览：进入关卡前查看目标、障碍与整体路线</figcaption></figure></div>
+          </div>
+        </article>
+
+        <article class="editable-block full-width level-case-block">
+          <p class="block-label">04 / LEVEL CASE A</p>
+          <div class="case-heading"><div><span class="case-number">A</span><h2 contenteditable="true" data-editable="level-heading-haystack">草垛机关：围绕消除顺序设计唯一解</h2></div><p contenteditable="true" data-editable="level-haystack-summary">关键词：不可逆变化 / 路线顺序 / 完美通关</p></div>
+          <div class="case-layout">
+            <div class="prose" contenteditable="true" data-editable="level-text-haystack">
+              <p>草垛受到撞击后会消失，因此每次撞击都会永久改变后续路径。我围绕这一特性安排草垛、待救小羊与钥匙的位置，让玩家需要提前判断不同消除顺序对后续路线的影响。</p>
+              <p>这一关的完成条件是救出全部小羊并取得钥匙。错误的草垛消除顺序会破坏后续路径，使关卡无法完成；正确路线可以通过倒退获得钥匙的路线得知。</p>
+            </div>
+            <aside class="reflection-callout"><span>设计反思</span><p contenteditable="true" data-editable="level-haystack-reflection">这个关卡验证了我对障碍特性和路径约束的运用，但也暴露了问题：如果玩家无法提前看懂错误选择的后果，“唯一解”就可能变成试错，而不是推理。后续设计同类关卡时，我会先确认关键信息是否可见，并通过前置教学、较短回退成本或路线提示，让失败原因能够被理解。</p></aside>
+          </div>
+          <div class="media-slot" data-slot="haystack">
+            <div class="media-slot-head"><span>草垛关卡路线与实机演示</span><label class="upload-button">追加 GIF / 图片<input class="slot-input" type="file" accept="image/gif,image/png,image/jpeg,image/webp" multiple /></label></div>
+            <div class="media-wall"><figure class="media-item"><img src="./media/levels/haystack-winning-route.gif" alt="草垛关卡的一条胜利路线" loading="lazy" /><figcaption>草垛关卡的一条胜利路线：消除顺序会影响后续通路</figcaption></figure></div>
+          </div>
+        </article>
+
+        <article class="editable-block full-width level-case-block">
+          <p class="block-label">05 / LEVEL CASE B</p>
+          <div class="case-heading"><div><span class="case-number">B</span><h2 contenteditable="true" data-editable="level-heading-wolf">狼追逐关：用动态压力改变路线决策</h2></div><p contenteditable="true" data-editable="level-wolf-summary">关键词：时间压力 / 救援顺序 / 回环路线</p></div>
+          <div class="case-layout">
+            <div class="prose" contenteditable="true" data-editable="level-text-wolf">
+              <p>倒计时结束后，狼会从地图顶部入场，以固定速度追逐玩家；一旦接触玩家，关卡立即失败。玩家不仅要救出全部小羊并取得钥匙，还需要在狼出现前确定救援顺序，并为追逐阶段保留可行路线。</p>
+              <p>地图中的回环区域允许玩家绕行争取时间，死路则会放大路线选择的风险。角色速度影响容错空间，但慢速角色仍然可以通过正确路线完成关卡，因此速度优势不会替代路线判断。</p>
+            </div>
+            <aside class="decision-flow" aria-label="狼追逐关决策流程"><span>观察全图</span><i></i><span>确定救援顺序</span><i></i><span>预留回环路线</span><i></i><span>应对狼的追逐</span></aside>
+          </div>
+          <div class="media-slot" data-slot="wolf">
+            <div class="media-slot-head"><span>狼入场、追逐路线与不同角色演示</span><label class="upload-button">追加 GIF / 图片<input class="slot-input" type="file" accept="image/gif,image/png,image/jpeg,image/webp" multiple /></label></div>
+            <div class="media-wall"><figure class="media-item"><img src="./media/levels/wolf-fast-character.gif" alt="狼追逐快速角色" loading="lazy" /><figcaption>快速角色：更高的移动速度提供更大的追逐容错</figcaption></figure><figure class="media-item"><img src="./media/levels/wolf-slow-character.gif" alt="狼追逐慢速角色" loading="lazy" /><figcaption>慢速角色：仍可通过正确路线完成关卡</figcaption></figure></div>
+          </div>
+        </article>
+
+        <article class="editable-block">
+          <p class="block-label">06 / PARAMETERS</p>
+          <h2 contenteditable="true" data-editable="level-heading-parameters">影响难度的变量</h2>
+          <ul class="parameter-list" contenteditable="true" data-editable="level-parameters">
+            <li><b>入场时间</b><span>玩家可用于观察与规划的时间</span></li>
+            <li><b>路线结构</b><span>回环、一次性决策的路线、死路</span></li>
+            <li><b>目标分布</b><span>小羊、钥匙与障碍物的相对位置</span></li>
+            <li><b>角色速度</b><span>玩家对于角色的选择影响追逐阶段的容错，但不改变通关条件</span></li>
+            <li><b>敌人追捕</b><span>敌人固定从顶部入场，敌人的速度与关卡难度息息相关</span></li>
+          </ul>
+        </article>
+
+        <article class="editable-block">
+          <p class="block-label">07 / REFLECTION</p>
+          <h2 contenteditable="true" data-editable="level-heading-reflection">心得复盘</h2>
+          <div class="prose" contenteditable="true" data-editable="level-text-reflection">
+            <p>这次重构后得到的经验是更大的地图和更多障碍物不等于更有深度。关卡设计需要先明确：玩家能观察到什么、需要做什么决定、错误选择会承担什么代价。</p>
+            <p>初版关卡当时没有留下完整的测试与迭代记录，因此我不会用无法验证的数据证明效果。但通过重新复盘，我能够分辨“路线成立”和“体验成立”的区别：前者保证关卡能完成，后者还要让信息、选择与反馈对玩家清楚可理解。这也是经过这次经验教训后我设计关卡时会优先检查的部分。</p>
+          </div>
+          <div class="media-slot" data-slot="reflection">
+            <div class="media-slot-head"><span>补充材料</span><label class="upload-button">追加 GIF / 图片<input class="slot-input" type="file" accept="image/gif,image/png,image/jpeg,image/webp" multiple /></label></div>
+            <div class="media-wall"><p class="media-empty">可补充关卡表、编辑器画面或复盘标注</p></div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer"><span>LI YAN / PERSONAL ARCHIVE</span><span>© 2026 Li Yan</span><a href="./levels.html">回到顶部 ↑</a></footer>
+    <script src="./script.js"></script>
+    <script src="./levels.js"></script>
+    <script src="./edit-backup.js"></script>
+  </body>
+</html>
